@@ -3,5 +3,12 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  has_attached_file :image,
+	styles: { medium: "200x300>", thumb: "100x100>" },
+	default_url: "/images/:style/missing.png"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+
   has_many :articles
+
+  
 end
