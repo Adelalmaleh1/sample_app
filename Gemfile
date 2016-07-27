@@ -28,9 +28,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Unicorn as the app server
 # gem 'unicorn'
+gem 'social-share-button', '~> 0.1.6'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'devise'
 gem "paperclip", "~> 4.2"
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
