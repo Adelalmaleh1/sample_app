@@ -5,7 +5,9 @@
 			<div class= "row">
 				<div class= "well col-md-4 col-md-offset-4">
 					<ul><%= link_to image_tag(user.image.url(:thumb))%></ul>
-					<ul> <%= link_to user.first_name, user %></ul>
+					<li> <%= link_to user.first_name, user %></li>
+					<li><small><%= pluralize(user.articles.count, "article") if user.articles %></small>
+					</li>
 				</div>
 			</div>
 		</ul>
