@@ -38,12 +38,11 @@ gem "paperclip", "~> 4.2"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 group :production do
-gem 'pg', '0.17.1'
-gem 'rails_12factor', '0.0.2'
+  gem 'pg'
+  gem 'rails_12factor'
 end
-
-group :development do
-  gem 'mysql2', '>= 0.3.13', '< 0.5'
+group :development, :test do
+  gem 'mysql2', "0.3.17"
 end
 
 
