@@ -34,19 +34,15 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'devise'
 gem "paperclip", "~> 4.2"
 
-
+group :development, :test do
+  gem 'mysql2', '>= 0.3.13', '< 0.5'
+ end
+gem 'pg', group: :production
+gem 'rails_12factor', '0.0.2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-group :production do
-gem 'pg', '0.17.1'
-gem 'rails_12factor', '0.0.2'
-end
 
-group :development, :test do
-	gem 'mysql2', '>= 0.3.13', '< 0.5'
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
-end
+
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
