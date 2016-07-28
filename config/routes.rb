@@ -9,10 +9,12 @@ Rails.application.routes.draw do
 
   
   resources :users do
+    resources :articles, only: [:index]
     member do
       get :follow
       get :unfollow
     end
+    get 'users/:id/user_posts' => 'users#user_posts', :as => :custom_user_posts
   end
 
 
