@@ -15,6 +15,7 @@
  *= require_self
  */
 
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -59,6 +60,16 @@ li {
 	padding: 10px 0;
 	border-bottom: 1px solid $gray-lighter;
 		}
+}
+
+
+
+.social-share-button {
+  .ssb-icon {
+    background-size: $size $size;
+    height: $size;
+    width: $size;
+  }
 }
 
 

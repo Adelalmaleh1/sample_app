@@ -28,7 +28,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Unicorn as the app server
 # gem 'unicorn'
-gem 'social-share-button', '~> 0.1.6'
+gem 'social-share-button', github: "huacnlee/social-share-button"
+gem "acts_as_follower"
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'devise'
 gem "paperclip", "~> 4.2"
@@ -36,6 +37,10 @@ gem "paperclip", "~> 4.2"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+group :production do
+gem 'pg', '0.17.1'
+gem 'rails_12factor', '0.0.2'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
