@@ -31,8 +31,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'social-share-button', github: "huacnlee/social-share-button"
 gem "acts_as_follower"
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'will_paginate'
 gem 'devise'
 gem "paperclip", "~> 4.2"
+gem 'mailboxer'
 
 
 # Use Capistrano for deployment

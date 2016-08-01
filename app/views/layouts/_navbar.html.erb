@@ -26,7 +26,8 @@
         <% if current_user %>
           <%= image_tag("/assets/profile-1.jpeg", class: "profile") %>
         <% end %>
-        <% if user_signed_in? %> 
+        <% if user_signed_in? %>
+          <li><%= link_to "Inbox", mailbox_inbox_path %><%=unread_messages_count%></li> 
           <li><%= link_to current_user.first_name, user_path(current_user)%></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></a>

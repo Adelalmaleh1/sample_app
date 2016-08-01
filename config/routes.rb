@@ -1,20 +1,29 @@
 Rails.application.routes.draw do
   get 'user/:id' => 'users#show', as: :user
   get 'users' => 'users#index', as: :user_index
+  get "mailbox/inbox" => "mailbox#inbox", as: :mailbox_inbox
+  get "mailbox/sent" => "mailbox#sent", as: :mailbox_sent
+  resources :conversations do
+    member do
+      post :reply
+    end
+  end
+
+  resources :messages, only: [:new, :create]
   devise_for :users 
   resources :articles
   root 'welcome#home'
 
   get 'welcome/about'
+  get 'welcome/index'
 
   
   resources :users do
-    resources :articles, only: [:index]
     member do
       get :follow
       get :unfollow
     end
-    get 'users/:id/user_posts' => 'users#user_posts', :as => :custom_user_posts
+    
   end
 
 

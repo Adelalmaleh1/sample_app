@@ -1,0 +1,20 @@
+<br>
+<div class="container">
+    <div class="page-header">
+        
+        <% if current_user.first_name  %>
+        <% else %>
+            <% if current_user.following?(@user) %>
+                <%= link_to("Unfollow", unfollow_user_path(@user), :class => 'btn btn-danger' ) %>
+            <% else %>
+                <%= link_to("Follow" , follow_user_path(@user.to_param), :remote => true, :class =>' btn btn-success' )%>
+            <% end %>
+        <%end %></h1>
+    </div>
+
+<% if @users.any? %>
+    <% @users.each do |user| %>
+        <%= @user.first_name %>
+        <hr>
+    <% end %>
+<% end %>

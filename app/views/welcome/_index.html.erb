@@ -1,0 +1,5 @@
+<h1 class= "text" align= "center">Hello <%= current_user.first_name %></h1>
+<h2 class= "profile" align= "center"> <%= link_to(image_tag(current_user.image.url(:medium)), user_path(current_user)) %></h2>
+	
+
+		

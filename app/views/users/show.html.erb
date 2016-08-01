@@ -1,10 +1,8 @@
-<div >
-			
+<div >		
 	<h1 class= "text" align= "center">Welcome to <%= @user.first_name %>'s page</h1>
 	<ul ><%= image_tag(current_user.image.url(:medium))%></ul>
-	<%= render "status" %>
+		<%= render "status" %>
 	<h2 class= "text" align= "center">List of <%= @user.first_name %>'s Articles</h2>
-	<%= render "articles/article", obj: @user.articles %>
-
-
+		<%= render "articles/article", obj: @user.articles %>
 </div>
+
