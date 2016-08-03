@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+
   get 'user/:id' => 'users#show', as: :user
   get 'users' => 'users#index', as: :user_index
   get "mailbox/inbox" => "mailbox#inbox", as: :mailbox_inbox
   get "mailbox/sent" => "mailbox#sent", as: :mailbox_sent
+  
   resources :conversations do
     member do
       post :reply
@@ -11,7 +13,11 @@ Rails.application.routes.draw do
 
   resources :messages, only: [:new, :create]
   devise_for :users 
-  resources :articles
+  resources :articles do 
+    collection do 
+      get 'search'
+    end
+  end
   root 'welcome#home'
 
   get 'welcome/about'

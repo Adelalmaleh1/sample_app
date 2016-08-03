@@ -35,8 +35,7 @@ gem 'will_paginate'
 gem 'devise'
 gem "paperclip", "~> 4.2"
 gem 'mailboxer'
-
-
+gem 'searchkick'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 group :production do

@@ -2,11 +2,16 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
-  # GET /articles
-  # GET /articles.json
+  def search
+    if params[:search].present?
+      @articles = Article.search(params[:search])
+    else
+      @articles = Article.all
+    end
+  end
+
   def index
     @articles = Article.order('created_at DESC').paginate(page: params[:page], per_page: 5)
-    
   end
 
   # GET /articles/1
