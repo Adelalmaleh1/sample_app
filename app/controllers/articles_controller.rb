@@ -1,6 +1,8 @@
 class ArticlesController < ApplicationController
+  before_action :add_current_user, axcept: [:index]
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
+  
 
   def search
     if params[:search].present?
@@ -67,6 +69,13 @@ class ArticlesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def add_current_user
+      unless user_signed_in?
+        redirect_to user_session_path
+        flash[:warning] = "please sign in"
+      end
+    end
+    
     def set_article
       @article = Article.find(params[:id])
     end
@@ -75,4 +84,5 @@ class ArticlesController < ApplicationController
     def article_params
       params.require(:article).permit(:title, :description)
     end
+    
 end

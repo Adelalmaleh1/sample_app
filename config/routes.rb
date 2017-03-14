@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :admins
   get 'user/:id' => 'users#show', as: :user
   get 'users' => 'users#index', as: :user_index
   get "mailbox/inbox" => "mailbox#inbox", as: :mailbox_inbox

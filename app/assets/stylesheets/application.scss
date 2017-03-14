@@ -20,17 +20,22 @@
 @import "bootstrap";
 
 .footer{
-	margin-top: 45px;
+	margin-top: 320px;
 	padding-top: 5px;
 	border-top: 1px solid #eaeaea;
 	color: #777;
+	position: relative;
+  
+  	height: 180px;
+  	clear: both;
 }
 
-
+footer a:hover {
+	color: #222;
+}
 
 footer small {
 	float: left;
-	color: black;
 }
 
 footer ul{
@@ -43,8 +48,9 @@ footer ul li {
 	margin-left: 15px;
 }
 
+
 .profile{
-		border: 0px solid #d9d9d9;
+	border: 0px solid #d9d9d9;
     border-radius: 50px;
     height: 40px;
     width: 45px;
@@ -63,7 +69,7 @@ li {
 }
 
 .logo {
-		height: 400px;
+	height: 400px;
     width: 45px;
 }
 
@@ -75,6 +81,36 @@ li {
   margin-top: 1em;
 }
 
+.inbox{
+	color: #9A9493;
+	padding: 15px 0;
+}
 
+.article-art{
+	font-size: 17px;
+	border-top: 1px solid #eaeaea;
+	padding-top: 5px;
+}
+.description{
+	margin-top: 0;
+}
+.title{
+	margin-top: 0;
+	text-align: center;
+}
+.article-title{
+font-weight: bold;
+font-size: 1.5em;
+}
 
+.article-body{
+border-top: 1px solid #eaeaea;
+padding-top: 15px;
+padding-bottom: 15px;
+}
+.new_article{
+	position:absolute;
+    transition: .5s ease;
+
+}
 
