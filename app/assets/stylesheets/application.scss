@@ -68,9 +68,13 @@ li {
 		}
 }
 
-.logo {
-	height: 400px;
-    width: 45px;
+#logo {
+	float: left;
+	font-size: 1.7em;
+	font-weight: bold;
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: -1px;
 }
 
 
@@ -114,3 +118,14 @@ padding-bottom: 15px;
 
 }
 
+.profile{
+	border: 0px solid #d9d9d9;
+    border-radius: 25px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+    text-align: center;
+    img { width: 100% }
+}
